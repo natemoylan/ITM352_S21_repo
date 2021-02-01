@@ -2,3 +2,18 @@ img {
     width: 200px;
     height: 200px;
 }
+body {
+    width: 800px;
+    margin: 0 auto;
+    background-image: url(./Images/phone_globe.jpg);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 5px solid black;
+    display: flex;
+}
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;  
+}
