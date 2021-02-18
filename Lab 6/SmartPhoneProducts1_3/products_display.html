@@ -10,6 +10,8 @@
     
     <script>
       var store_name = "Nate Moylan"
+      var first_name = 'Nate';
+      var last_name = 'Moylan';
   
    
   </script>
@@ -23,28 +25,43 @@
         </style>
       
 <body>
+ 
   <header>
-    <h1>
-      <script>
-        document.write(store_name);
-      </script>'s'
-      Used Smart Phone Store</h1>
+    <center>
+      <span style="font-size: 600%;"> 
+      <script> 
+        document.write(
+          "<b>" + first_name + "</b><i> " + last_name + "</i>'s"
+        );
+      
+         
+        
+       
+    
+    </script>
+     </span>
+      <h1> 
+       Used Smart Phone Store
+      </h1>
+    </center>
+
       <p style="text-align: center; font-weight: bold;">
         Hits:<span id="hits_span">0</span>
         Spins:<span id="spins_span">0</span>
+        Hit/Spin:<span id="hit_spin_span">0</span>
         </p>
  
          
     </header>
     <div>
       <main>
-        <section class="item" onmouseover="
-           hits_span.innerHTML = hits;
-           spins_span.innerHTML = spins; 
-          this.className='item rotate';" 
+        <section class="item" onmouseover=" 
+           spins_span.innerHTML = ++spins; 
+          this.className='item rotate';
+          hit_spin_span.innerHTML = hits_span.innerHTML/spins_span.innerHTML;
+          "
           onclick=" 
-           hits_span.innerHTML = hits;
-           spins_span.innerHTML = spins; 
+           hits_span.innerHTML = ++hits; 
           this.className='item';">
         <h2>HTC</h2>
         <p style="text-align: center; font: 1em Open Sans; font-size: x-large;">$40.00</p>
@@ -100,18 +117,19 @@
   </section>
 </main></div>
 <footer>
-
-  <h1>
-    Your One Stop for Used Phones -
-    <script>
-      document.write(store_name);
-    </script>
-  </h1>
-
+    <script>document.write(`
+  <table border="1" style="margin-left: auto; margin-right: auto; text-align: center;">
+    <tr><th colspan="2"><h1>Your One Stop For Used Phones - ${first_name[0] + '.' + last_name[0] + '.'}'s</h1></th></tr>
+    <tr><td>1.</td><td><br />Copyright @ Dan Port</td></tr>
+    <tr><td>2.</td><td>2021</td></tr>
+    <tr><td>3.</td><td>11:15 A.M.</td></tr>
+</table>
+`);
+</script>
 </footer>
 </body>
 </html>
 <script>  
-  var hits =10;
-  var spins = 100;
+  var hits =0;
+  var spins = 0;
 </script>
