@@ -1,0 +1,68 @@
+<script>
+  num_items=5;
+
+  //Product1
+  var brand1 = "HTC";
+  var price1 = 40.00;
+  var image1 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg";
+
+  //Product2
+  var brand2 = "Apple";
+  var price2 = 75.00;
+  var image2 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg";
+
+  //Product3
+  var brand3 = "Nokia";
+  var price3 = 30.00;
+  var image3 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg";
+
+  //Product4
+  var brand4 = "Samsung";
+  var price4 = 45.00;
+  var image4 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg";
+
+  //Product5
+  var brand5 = "Blackberry";
+  var price5 = 10.00;
+  var image5 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg";
+</script>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartphone Products</title>
+  <link rel="stylesheet" href="products-style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans">
+  <style type="text/css">
+    h1,
+    h2 {
+      text-align: center;
+    }
+  </style>
+
+<body>
+  <h1>Used Smart Phone Store</h1>
+  <div>
+    <main>
+
+
+
+      <script>
+        for(i=1; 1<=num_items; i++){
+        document.write(`
+        <section class="item">
+        <h2>${eval('brand' + i)}</h2>
+        <p style="text-align: center; font: 1em Open Sans; font-size: x-large;">$${eval('price' + i)}</p>
+        <img src="${eval('image' + i)}">
+      </section>
+        
+        `);
+      }
+      </script>
+    </main>
+  </div>
+  <h1>Your One Stop Phone Shop</h1>
+</body>
+
+</html>
