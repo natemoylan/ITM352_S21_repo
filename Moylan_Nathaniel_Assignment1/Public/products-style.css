@@ -1,0 +1,137 @@
+ /* General */
+ 
+
+ html {
+  
+    font-family: 'Della Respira', sans-serif;
+    background-color: darkslategrey;
+    color: white;
+    font-size: 11px;
+    border: 20px solid black;
+    
+  }
+  
+  body {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+
+  /* Nav Bar */
+
+  .top-nav{
+    background-color:#18222b;
+    overflow: hidden;
+  }
+  
+  .top-nav a{
+    color: aliceblue;
+    display: block;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .active{
+    background-color: #009dce;
+  }
+
+  .top-nav a:hover:not(.active){
+    background-color: #34495e;
+  }
+
+  .right{
+    float: right !important;
+  }
+  /* Typography */
+  
+  
+  h1, h2 {
+    
+    font-family: 'Della Respira', cursive;
+    margin: 0;
+    text-align: center;
+  }
+  
+  
+  h1 {
+    font-size: 8rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color:white;
+    text-align: right;
+    position: absolute;
+    right: 15%;
+    line-height: 15rem;
+  }
+  
+  
+
+  /* block styling */
+  
+  
+  header, aside, main, footer {
+    padding: 5px;
+    
+  }
+   
+  footer {
+    border: 10px solid black;
+    border-top: 8;
+    position:relative;
+  }
+  
+  footer h1 {
+    font-style: bold;
+    font-size: 6rem;
+  }
+  
+  
+  /*  Form styling */
+
+  main {
+    display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+  
+  
+  /* Styling the products */
+  
+  
+  section {
+    width: 45%;
+    margin: 5px;
+    background-color:black;
+    position: relative;
+    height: 230px;
+  }
+  
+  section p {
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px black;
+    position: absolute;
+    right: 100px;
+    bottom: 6px; 
+  }
+ 
+  
+  
+  
+  .item img {
+      width: 250px;
+      height: 200px; 
+      
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      
+  }
+
+  

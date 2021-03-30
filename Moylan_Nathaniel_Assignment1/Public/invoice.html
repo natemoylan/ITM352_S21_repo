@@ -1,0 +1,130 @@
+<script src="./product_data.js" type="text/javascript">
+//this is going to link it to my product.js
+</script>
+<script>
+  /*
+  This creates and displays a sales invoice from product sales data.
+  */
+  //from invoice
+  let params = (new URL(document.location)).searchParams;//looks for quantities
+  var quantities = [];
+
+  //processes invoice, produces form from data 
+  if (params.has('submitPurchase')) {
+    for (i = 0; i < products.length; i++) {
+      if (params.has(`quantity${i}`)) {
+        a_qty = params.get(`quantity${i}`);
+        quantities[i] = a_qty;
+      }
+    }
+  }
+  else {
+    document.write('Please select a valid quantity!');
+  }
+  console.log(quantities);
+
+
+
+
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <table border="2">
+    <tbody>
+      <tr>
+        <th style="text-align: center;" width="43%">Item</th>
+        <th style="text-align: center;" width="11%">quantity</th>
+        <th style="text-align: center;" width="13%">price</th>
+        <th style="text-align: center;" width="54%">extended price</th>
+      </tr>
+      <script>
+
+        subtotal = 0;//to compute subtotal
+        for (i = 0; i < products.length; i++) {
+          if (quantities[i] > 0) {
+            extended_price = quantities[i] * products[i].price;
+            subtotal += extended_price;
+            document.write(`
+        <tr>
+          <td width="43%">${products[i].brand}</td>
+          <td align="center" width="11%">${quantities[i]}</td>
+          <td width="13%">\$${products[i].price}</td>
+          <td width="54%">\$${extended_price.toFixed(2)}</td>
+        </tr>
+    `);
+          }
+        }
+        //Compute Shipping
+        if (subtotal <= 300) {
+          shipping = 15;
+        }
+        else if (subtotal <= 500) {
+          shipping = 25;
+        }
+        else {
+          shipping = 0.25 * subtotal;
+        }
+
+
+        //Compute Tax
+        var tax_rate = 0.045;
+        var tax = tax_rate * subtotal;
+
+        //Compute Grand Total
+        //borrowed from invoice 4
+        var total = subtotal + tax + shipping;
+      </script>
+      <tr>
+        <td colspan="4" width="100%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;" colspan="3" width="67%">Sub-total</td>
+        <td width="54%">$
+          <script>document.write(subtotal.toFixed(2));</script>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;" colspan="3" width="67%"><span style="font-family: arial;">Tax @
+            <script>document.write(100 * tax_rate);</script>%
+          </span></td>
+        <td width="54%">
+          <script>document.write(tax.toFixed(2));</script>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;" colspan="3" width="67%">
+          </script>Shipping</span></td>
+        <td width="54%">
+          <script>document.write(shipping.toFixed(2));</script>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;" colspan="3" width="67%"><strong>Total</strong></td>
+        <td width="54%"><strong>
+            <script>document.write(total.toFixed(2));</script>
+          </strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <b>
+      OUR SHIPPING POLICY IS:A subtotal $0 - $299.99 will be $15 shipping
+      A subtotal $300 - $500 will be $25 shipping
+      Subtotals over $500 will be charged 5% of the subtotal amount</b>
+  </div>
+
+</body>
+
+</html>
