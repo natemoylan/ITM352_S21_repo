@@ -1,0 +1,49 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:sans-serif;
+}
+
+body{
+    background: url(./Images/invoice.jpeg) no-repeat;
+    background-size: cover;
+}
+/* Nav Bar */
+
+.top-nav{
+    background-color:#18222b;
+    overflow: hidden;
+    font-size: medium;
+  }
+  
+  .top-nav a{
+    color: aliceblue;
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+ .active{
+   background-color: #009dce;
+ }
+
+  .top-nav a:hover:not(.active){
+    background-color: #34495e;
+  }
+
+table{
+    color: lightgray;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 10;
+}
+
+.info{
+    color:lightgray;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 10;
+}

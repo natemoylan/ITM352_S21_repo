@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Borrowed and modified code from Lab 14
+        // Informs user if error is present in username and/or password
+        let params = (new URL(document.location)).searchParams;
+        window.onload = function () {
+            if (params.has('errors')) {
+                console.log("invalid");
+                alert('Fix the following errors: \n' + params.get('errors'));
+                Register["fullname"].value=params.get("fullname");
+                Register["username"].value=params.get("username");
+                Register["email"].value=params.get("email");
+            }
+        }    
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title> <!--Name on top of the page along with a favicon on the browser tab-->
+<!--Borrowed portion of a template from W3Schools-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./register-style.css">
+  
+</head>
+<body> 
+    <div class="top-nav">
+        <ul>
+          <a class="active" href="./index.html">Game Console Store</a>
+          <a href="./products_display.html">Products</a>
+          <a href="./register.html">Register</a> 
+          <a href="./login.html">Login</a>
+          
+        </ul>
+    </div>    
+    <div class="account"> 
+    <h1>Registration Form</h1>
+    <h3>Please register a account before shopping or purchasing items!</h3>
+    
+    <div id='account'>
+        <form method="POST" action="process_register" name="Register">
+            <input type="text" name="fullname" size="40" pattern="[a-zA-Z]+[ ]+[a-zA-Z]+" placeholder="Enter First & Last Name"><br />
+                <!--Pattern matches any character from lowercase a-z and uppercase A-Z-->   
+            <input type="text" name="username" size="40" pattern=".[a-z0-9]{3,15}"   required title="Minimum 4 Characters, Maximum 15 Characters, Numbers/Letters Only" placeholder="Enter Username"><br />
+                <!--Pattern matches any character from lowercase a-z, uppercase A-Z, & numbers 0-9. Min. characters are 3, max. characters are 15.-->
+            <input type="email" name="email" size="40" pattern="[a-z0-9._]+@[a-z0-9]+\.[a-z]{3,}$" required title="Please enter valid email." placeholder="Enter Email"><br />
+                <!--Pattern requires a universal email address format (ex: xxx@xxx.xxx) so it will match any character from letters a-z and numbers 0-9-->
+            <input type="password" id="password" name="password" size="40" pattern=".{6,}" required title="6 Characters Minimum" placeholder="Enter Password"><br />
+                <!--Pattern above checks for at least 6 characters-->
+            <input type="password" id="repeat_password" name="repeat_password" size="40" pattern=".{6,}" required title="6 Characters Minimum" placeholder="Confirm Password"><br />
+                <!--Pattern above checks for at least 6 characters-->
+            <input type="submit" value="Register" class="btn">
+        </form>
+        <script>
+            Register.action += document.location.search; // Saves the query string from the products _display.html for my invoice.html
+        </script>
+    </div>
+    
+    <!--Button for Returning Members/ Users who have an existing account-->
+    <input type="button" name="olduser" value="Returning Users Click Here!" class="btn2"
+        onclick="window.location='./login.html' + document.location.search;">
+</body>
+<!--Primitive logout button that returns to index.html, once user re-enters it clears the query string--> 
+    <input type="button" name="logoutuser" value="Logout" class="btn2"
+    onclick="window.location='./index.html' + document.location.search;">
+    <p>Please don't forget to logout after your session!</p> 
+</div>
+</html>

@@ -1,0 +1,59 @@
+* {
+    padding:0;
+    margin:0;
+    font-family:san-serif;
+}
+
+body{
+    background: url(./Images/bg.jpeg) no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.account{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
+.account h1{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+
+}
+
+.account h3{
+    font-size: 20px;
+    text-align: center;
+    text-transform:inherit;
+    margin: 20px 0;
+}
+/*nav bar*/
+
+.top-nav{
+    background-color:#18222b;
+    overflow: hidden;
+    font-size: medium;
+    display:-webkit-inline-flex;
+  }
+  
+  .top-nav a{
+    color: aliceblue;
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+ .active{
+   background-color: #009dce;
+ }
+
+  .top-nav a:hover:not(.active){
+    background-color: #34495e;
+  }
+

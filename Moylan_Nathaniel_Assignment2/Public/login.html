@@ -1,0 +1,56 @@
+<script src="./user_data.json" type="json"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        //alerts th euser if they have an error (in both the username and password)
+        let params = (new URL(document.location)).searchParams;
+
+        window.onload = function () {
+            if (params.has('LogError')) {
+                alert('Invalid Username or Passowrd');
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./login.css">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Oswald">
+    <title>Login!</title>
+</head>
+<div class="top-nav">
+    <ul>
+      <a class="active" href="./index.html">Game Console Store</a>
+      <a href="./products_display.html">Products</a>
+      <a href="./register.html">Register</a> 
+      <a href="./login.html">Login</a>
+      
+    </ul>
+</div>  
+<body> 
+    <div class="login-form">
+    <h1>Game Console Store</h1>
+    <p>To buy our products you must<br> login or register as a member</p>
+        
+    <form name="login" action="process_login" method="POST">
+        
+            <p>Username</p>
+            <input type="text" name="username" id="username" size="40" placeholder="Enter Username" required><br>
+            <p>Password</p>
+            <input type="password" name="password" id="password" size="40" placeholder="Enter Password" onkeyup="" required><br> 
+            <input type="submit" value="Login" name="login" class='btn'></input>
+           
+    </form>
+    <script>
+        
+       login.action += document.location.search; //saves the query string from the products page for the invoice 
+    </script>
+    <input type="button" name="newuser" value="New User Register Here!" class="btn2"
+        onclick="window.location='./register.html' + document.location.search;">
+    </body>  
+  </div>
+  </html>
